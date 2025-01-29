@@ -3,6 +3,8 @@ from django.shortcuts import render
 from django.views.generic.base import View
 from django.shortcuts import render
 
+from blogpost.models import Post
+
 # Create your views here.
 
 
@@ -19,6 +21,3 @@ class HelloWorld(View):
         
         return render(request,'creacionhtml.html',context=data, 
         )
-
-
-

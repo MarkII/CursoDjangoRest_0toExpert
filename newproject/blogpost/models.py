@@ -5,5 +5,5 @@ from django.db import models
 class Post(models.Model):
     title = models.CharField(verbose_name="Titulo", max_length=256)
     description = models.TextField(verbose_name="Descripción")
-    created_at = models.DateTimeField(auto_created=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     
