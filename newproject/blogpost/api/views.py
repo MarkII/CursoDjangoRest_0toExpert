@@ -11,6 +11,7 @@ from blogpost.models import Post as BlogPost
 from blogpost.api.serializers import BlogPostSerializer
 
 
+#APIVIEW
 class PostApiView(APIView):
     def get(self, request):
         """
@@ -33,7 +34,7 @@ class PostApiView(APIView):
         
         return Response(status=status.HTTP_200_OK, data=serializer.data)
     
-    
+#VIEWSET    
 class BlogPostViewSet(ViewSet):
     
     def create(self, request):
