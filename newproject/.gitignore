@@ -4,6 +4,7 @@ venv/
 *.pot
 *.pyc
 __pycache__/
+newproject/__pycache__/
 db.sqlite3
 media
 
