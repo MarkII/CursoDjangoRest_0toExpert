@@ -16,13 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from blogpost.api.views import PostApiView
-
+from blogpost.api.views import PostApiView, BlogPostViewSet
+from blogpost.api.router import router_post
 from blogpost.views import HelloWorld
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     #path('',HelloWorld.as_view()),
     path('api/post', PostApiView.as_view()),
+    path('api/', include(router_post.urls)),
+    #path('api/postviewset', BlogPostViewSet.as_view({'get':'list'})),
     path('api-auth', include('rest_framework.urls'))
 ]
