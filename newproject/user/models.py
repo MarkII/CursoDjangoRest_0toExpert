@@ -4,4 +4,8 @@ from django.contrib.auth.models import AbstractUser
 
 
 class User(AbstractUser):
-    pass
+    web_site = models.CharField(max_length=256, blank=True)
+    twitter = models.CharField(max_length=128, blank=True)
+    
+    
+    
