@@ -9,6 +9,8 @@ from rest_framework import status
 
 from blogpost.models import Post as BlogPost
 from blogpost.api.serializers import BlogPostSerializer
+from blogpost.api.permissions import IsAdminOrReadOnly
+from rest_framework.permissions import IsAuthenticated, IsAdminUser, IsAuthenticatedOrReadOnly
 
 
 #APIVIEW
@@ -64,4 +66,7 @@ class BlogPostModelViewSet(ModelViewSet):
 
     serializer_class = BlogPostSerializer
     queryset = BlogPost.objects.all()
-    
+    permission_classes = [IsAuthenticated, IsAdminUser, IsAuthenticatedOrReadOnly, IsAdminOrReadOnly] 
+    # Con esto solo los usuarios autenticados pueden acceder a este CRUD
+    # Con el admmin user solo los usuarios de tipo admin pueden aparecer
+    # IsAuthenticatedOrReadOnly todos pueden leer pero modificar o los crear solo los autenticados
