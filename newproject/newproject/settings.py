@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'blogpost',
     'rest_framework',
     'drf_yasg',
+    'user',
 ]
 
 MIDDLEWARE = [
@@ -120,6 +121,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = './static/'
+
+AUTH_USER_MODEL = 'user.User' #Configuracion y override del user
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
