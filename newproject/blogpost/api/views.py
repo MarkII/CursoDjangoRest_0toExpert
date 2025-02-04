@@ -3,7 +3,7 @@ import json
 from django.shortcuts import get_object_or_404
 
 from rest_framework.views import APIView
-from rest_framework.viewsets import ViewSet 
+from rest_framework.viewsets import ViewSet, ModelViewSet
 from rest_framework.response import Response
 from rest_framework import status
 
@@ -34,6 +34,7 @@ class PostApiView(APIView):
         
         return Response(status=status.HTTP_200_OK, data=serializer.data)
     
+    
 #VIEWSET    
 class BlogPostViewSet(ViewSet):
     
@@ -53,3 +54,14 @@ class BlogPostViewSet(ViewSet):
         blog = get_object_or_404(queryset, pk=pk)
         serializer = BlogPostSerializer(blog)
         return Response(status=status.HTTP_200_OK, data=serializer.data)
+    
+    
+#MODELVIEWSET
+#Manera mas rapida de hacer un crud,
+#si no se pone el http_mehod devuelve todo
+
+class BlogPostModelViewSet(ModelViewSet):
+
+    serializer_class = BlogPostSerializer
+    queryset = BlogPost.objects.all()
+    
