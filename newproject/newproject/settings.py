@@ -10,7 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+import datetime
 from pathlib import Path
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -73,6 +75,20 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'newproject.wsgi.application'
 
+REST_FRAMEWORK = {
+    
+    'DEFAULT_AUTHENTICATION_CLASSES':(
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        )
+    
+}
+
+#Duracion del token de usuario por JWT
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME' : datetime.timedelta(minutes=60),
+    'REFRESH_TOKEN' : datetime.timedelta(days=7),
+}
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases

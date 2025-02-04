@@ -56,6 +56,7 @@ urlpatterns = [
     path('api/post', PostApiView.as_view()),
     path('api/', include(router_post.urls)),
     #path('api/postviewset', BlogPostViewSet.as_view({'get':'list'})),
-    path('api-auth', include('rest_framework.urls'))
+    path('api-auth', include('rest_framework.urls')),
+    path('api/', include('user.api.router')),
    
 ]
