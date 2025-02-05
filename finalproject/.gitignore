@@ -1,6 +1,6 @@
-/venv/
+./venv/
 venv/
-../../venv/
+../../venv
 # Django #
 *.log
 *.pot
@@ -8,7 +8,6 @@ venv/
 __pycache__/
 newproject/__pycache__/
 ../venv/
-db.sqlite3
 media
 
 # Backup files # 
