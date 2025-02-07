@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework_simplejwt',
     'drf_yasg',
     'users',
 ]
@@ -114,6 +115,16 @@ USE_I18N = True
 
 USE_TZ = True
 
+#JWT 
+
+REST_FRAMEWORK = {
+    
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+
+}
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
@@ -128,3 +139,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #Con esto sobreescribimos nuestro modelo con el base de django.
 AUTH_USER_MODEL = 'users.User' 
+
