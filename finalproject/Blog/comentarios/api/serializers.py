@@ -11,4 +11,4 @@ class ComentariosSerializer(ModelSerializer):
     
     class Meta:
         model = Comentarios
-        fields = ['content', 'created_at', 'user', 'post']
+        fields = ['contenido', 'created_at', 'user', 'post']
