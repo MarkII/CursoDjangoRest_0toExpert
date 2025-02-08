@@ -6,7 +6,7 @@ from categorias.api.serializers import CategoriasSerializer
 class PostsSerializer(ModelSerializer):
     # Tenemos toda la info que da el serializer cuando hacemos un GET de cualquier posts y lo mismo para las categorias.
     user = UserInfoSerializer()
-    categorias = CategoriasSerializer()
+    categoria = CategoriasSerializer()
     
     class Meta:
         model = Posts

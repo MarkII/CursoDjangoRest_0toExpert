@@ -14,3 +14,5 @@ class Posts(models.Model):
     user = models.ForeignKey(User, on_delete=SET_NULL, null=True)
     categoria = models.ForeignKey(Categorias, on_delete=SET_NULL, null=True)
     
+    def __str__(self):
+        return self.title

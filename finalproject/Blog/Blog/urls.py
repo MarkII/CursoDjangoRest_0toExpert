@@ -23,6 +23,7 @@ from drf_yasg import openapi
 
 from categorias.api.router import router_categorias
 from posts.api.router import post_router
+from comentarios.api.router import router_comentarios
 
 
 schema_view = get_schema_view(
@@ -48,4 +49,5 @@ urlpatterns = [
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
     path('api/', include(router_categorias.urls)), #Modelviewset
     path('api/', include(post_router.urls)),
+    path('api/', include(router_comentarios.urls)),
 ]
